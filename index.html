@@ -1,6 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVP0CM0FMH"></script>
@@ -13,430 +14,577 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimbingBlock - Play the Fun Ladder Climbing Game Online</title>
-    <meta name="description" content="Play ClimbingBlock, the addictive ladder climbing game. Challenge yourself to reach new heights in this physics-based puzzle adventure.">
-    <link rel="canonical" href="https://climbingblock.com/">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧗</text></svg>">
+    <meta name="description" content="Play Climbing Block - a fun climbing challenge game on CrazyGames. Jump between blocks, unlock 30 characters, and achieve epic scores!">
+    <meta name="keywords" content="Climbing Block, CrazyGames, HTML5 game, free online games, animal games, stacking adventure, timing challenges, multiplayer games">
+    <link rel="canonical" href="https://climbingblock.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Climbing Block - A Fun Climbing Challenge Game</title>
+    
     <style>
         :root {
-            --primary: #0071e3;
-            --primary-light: #2997ff;
-            --primary-dark: #00498f;
-            --gray-100: #f5f5f7;
-            --gray-200: #e2e2e9;
-            --gray-500: #86868b;
-            --gray-800: #1d1d1f;
-            --text: #333;
-            --white: #fff;
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --apple-blue: #0071e3;
+            --apple-light-blue: #2997ff;
+            --apple-gray: #f5f5f7;
+            --apple-dark-gray: #86868b;
+            --apple-text: #1d1d1f;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-            color: var(--text);
-            background: var(--gray-100);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header styles */
-        header {
-            background: var(--white);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--gray-800);
-        }
-        
-        .logo-icon {
-            background: var(--primary);
-            color: white;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-link {
-            text-decoration: none;
-            color: var(--gray-500);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 0 30px;
-            position: relative;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            color: var(--gray-800);
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--gray-500);
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        
-        /* Game container */
-        .game-section {
-            padding: 30px 0 50px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--apple-text);
+            background-color: white;
+            line-height: 1.5;
         }
         
         .game-container {
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            aspect-ratio: 16/9;
         }
         
-        .game-iframe-container {
-            position: relative;
-            padding-top: 75%; /* 4:3 aspect ratio */
-            height: 0;
-            overflow: hidden;
+        .btn-apple {
+            background: linear-gradient(to bottom, var(--apple-light-blue), var(--apple-blue));
+            color: white;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s;
         }
         
-        .game-iframe {
+        .btn-apple:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+        
+        .forum-message {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .forum-message::before {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Game info section */
-        .info-section {
-            padding: 60px 0;
-            background: var(--white);
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .info-card {
-            background: var(--gray-100);
-            border-radius: 18px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: var(--gray-800);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
+            left: 1.5rem;
+            top: 3.5rem;
             bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
+            width: 2px;
+            background-color: #e0e0e0;
         }
         
-        p {
-            margin-bottom: 20px;
-            color: var(--gray-500);
-        }
-        
-        .features {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .features li {
-            padding: 8px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .how-to-play {
-            background: var(--primary);
-            color: var(--white);
-            padding: 15px 25px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .how-to-play h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .how-to-play ol {
-            text-align: left;
-            padding-left: 25px;
-            margin: 20px 0;
-        }
-        
-        .how-to-play li {
-            margin-bottom: 10px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--gray-800);
-            color: var(--gray-200);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--white);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .copyright {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--gray-500);
-        }
-        
-        /* Responsive adjustments */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                gap: 20px;
-            }
-            
-            .game-iframe-container {
-                padding-top: 100%; /* Square aspect ratio for mobile */
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
+            .game-container {
+                aspect-ratio: 9/16;
             }
         }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hero, .game-section, .info-section {
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        .info-card {
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        .info-card:nth-child(1) { animation-delay: 0.1s; }
-        .info-card:nth-child(2) { animation-delay: 0.2s; }
-        .info-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
-<body>
+<body class="bg-white">
     <!-- Header with Logo -->
-    <header>
-        <div class="container header-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">🧗</div>
-                <span>ClimbingBlock</span>
-            </a>
-            <nav class="nav-links">
-                <a href="#play" class="nav-link">Play Now</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#how-to-play" class="nav-link">How to Play</a>
-                <a href="#features" class="nav-link">Features</a>
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-3">CB</div>
+                <h1 class="text-xl font-semibold text-gray-800">ClimbingBlock.com</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#game" class="text-gray-600 hover:text-blue-600">Play Game</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600">Features</a>
+                <a href="#download" class="text-gray-600 hover:text-blue-600">Download</a>
+                <a href="#forum" class="text-gray-600 hover:text-blue-600">Forum</a>
             </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>ClimbingBlock: The Ultimate Ladder Challenge</h1>
-            <p class="subtitle">Test your skills in this addictive physics-based climbing game. Build your ladder, reach new heights, and compete for the highest score!</p>
-        </div>
-    </section>
-
-    <!-- Game Section -->
-    <section id="play" class="game-section">
-        <div class="container">
-            <div class="game-container">
-                <div class="game-iframe-container">
-                    <iframe 
-                        src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.334" 
-                        class="game-iframe" 
-                        allow="autoplay; fullscreen" 
-                        title="ClimbingBlock Game">
-                    </iframe>
+    <section class="bg-gradient-to-b from-blue-50 to-white py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Climbing Block - A Fun Climbing Challenge Game
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-8 max-w-2xl">
+                        Join Climbing Block on CrazyGames! Jump between blocks to climb high, unlock 30 characters, and achieve epic scores in this fun adventure.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#game" class="btn-apple px-8 py-4 text-lg font-medium">
+                            Play Now <i class="fas fa-play ml-2"></i>
+                        </a>
+                        <a href="#download" class="border-2 border-gray-300 px-8 py-4 text-lg font-medium rounded-full text-gray-800 hover:bg-gray-50">
+                            Download App
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Game Information Section -->
-    <section id="about" class="info-section">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <h2>About ClimbingBlock</h2>
-                    <p>ClimbingBlock is a thrilling physics-based puzzle game where you strategically build a ladder to climb as high as possible. With its simple yet challenging mechanics, players of all ages can enjoy this addictive game.</p>
-                    <p>Originally developed by independent game creators, ClimbingBlock has become a favorite among puzzle enthusiasts for its unique blend of strategy and physics simulation.</p>
-                </div>
-                
-                <div id="features" class="info-card">
-                    <h2>Game Features</h2>
-                    <ul class="features">
-                        <li>Simple one-touch controls perfect for mobile and desktop</li>
-                        <li>Challenging physics-based gameplay</li>
-                        <li>Endless replayability with procedurally generated challenges</li>
-                        <li>Colorful, minimalist design with smooth animations</li>
-                        <li>Global leaderboards to compete with players worldwide</li>
-                        <li>Progressive difficulty that keeps you engaged</li>
-                        <li>Completely free to play with no downloads required</li>
-                    </ul>
-                </div>
-                
-                <div id="how-to-play" class="info-card">
-                    <h2>How to Play</h2>
-                    <p>The rules of ClimbingBlock are simple but mastering the game requires skill and strategy:</p>
-                    <div class="how-to-play">
-                        <h3>Game Instructions</h3>
-                        <ol>
-                            <li><strong>Click or tap</strong> to extend your ladder</li>
-                            <li><strong>Release</strong> to lock the ladder in place</li>
-                            <li><strong>Climb</strong> the ladder to reach new heights</li>
-                            <li><strong>Avoid obstacles</strong> and balance carefully</li>
-                            <li><strong>Collect coins</strong> for special power-ups</li>
-                            <li><strong>Compete</strong> for the highest score!</li>
-                        </ol>
-                        <p>Tip: Time your ladder placements for optimal stability!</p>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl shadow-xl flex items-center justify-center">
+                            <div class="bg-white w-3/4 h-3/4 rounded-lg flex flex-col items-center justify-center p-4 shadow-inner">
+                                <div class="flex space-x-1 mb-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                </div>
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mb-3" />
+                                <h3 class="font-bold text-lg">CLIMBING BLOCK</h3>
+                                <p class="text-xs text-center text-gray-500 mt-1">Stacking Adventure Game</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -right-6 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold transform rotate-6 shadow-md">
+                            FREE TO PLAY!
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <div>🧗</div>
-                <span>ClimbingBlock</span>
+    <!-- Game Section -->
+    <section id="game" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-4">Play Climbing Block Online</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                Play the full version directly in your browser. No downloads required!（Play offline）
+            </p>
+            
+            <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                <div class="game-container">
+                    <iframe src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.334" 
+                            class="w-full h-full" 
+                            frameborder="0" 
+                            allow="fullscreen"
+                            title="Climbing Block Game">
+                    </iframe>
+                </div>
+                
+                <div class="p-6 bg-gray-800 text-white flex flex-wrap items-center justify-between">
+                    <div>
+                        <h3 class="font-medium">Climbing Block</h3>
+                        <p class="text-gray-400 text-sm">HTML5 Game by CrazyGames</p>
+                    </div>
+                    <button onclick="document.querySelector('iframe').requestFullscreen()" 
+                            class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-expand mr-2"></i> Fullscreen
+                    </button>
+                </div>
             </div>
-            <p>The ultimate ladder climbing challenge - play for free in your browser!</p>
-            <p class="copyright">© 2023 climbingblock.com - All rights reserved. </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-4">Game Features</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-16">
+                Discover what makes Climbing Block an addictive and fun gaming experience
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">30 Unique Characters</h3>
+                    <p class="text-gray-600">
+                        Unlock 30 different characters as you progress, each with unique abilities and styles.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 mb-6">
+                        <i class="fas fa-gamepad text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Challenging Gameplay</h3>
+                    <p class="text-gray-600">
+                        Master timing challenges and stacking techniques to climb higher and beat your high score.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multiplayer Mode</h3>
+                    <p class="text-gray-600">
+                        Challenge your friends in multiplayer mode and see who can reach the top fastest.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16 bg-gradient-to-br from-blue-500 to-purple-600">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="max-w-3xl mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">Download Climbing Block App</h2>
+                <p class="text-blue-100 mb-10 text-xl">
+                    Take the climbing challenge with you wherever you go! Download our mobile app for the best experience.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.pinpinteam.climbingup" 
+                       target="_blank"
+                       class="bg-black hover:bg-gray-900 px-8 py-4 rounded-xl flex items-center transition-colors">
+                        <i class="fab fa-google-play text-3xl mr-4"></i>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-300">GET IT ON</div>
+                            <div class="font-bold text-xl">Google Play</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://apps.apple.com/us/app/climbing-block/id1204214512" 
+                       target="_blank"
+                       class="bg-black hover:bg-gray-900 px-8 py-4 rounded-xl flex items-center transition-colors">
+                        <i class="fab fa-apple text-3xl mr-4"></i>
+                        <div class="text-left">
+                            <div class="text-sm text-gray-300">DOWNLOAD ON THE</div>
+                            <div class="font-bold text-xl">App Store</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <p class="mt-10 text-blue-100">
+                    Both versions are free to download and play with optional in-app purchases.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forum Section -->
+    <section id="forum" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-4">Community Forum</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                Join the conversation! Share your high scores, strategies, and feedback. No registration required.
+            </p>
+            
+            <div class="bg-gray-50 rounded-2xl shadow-sm p-6 mb-10">
+                <h3 class="text-xl font-semibold mb-4">Post a Message</h3>
+                <form id="forum-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 mb-2">Name (optional)</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 mb-2">Your Message*</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        <p class="text-sm text-gray-500 mt-1">Note: Offensive language will be automatically filtered</p>
+                    </div>
+                    <button type="submit" class="btn-apple px-6 py-3 font-medium">
+                        Post Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold mb-6">Recent Discussions</h3>
+                
+                <div id="forum-messages" class="space-y-8">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+                
+                <div id="load-more-container" class="mt-10 text-center hidden">
+                    <button id="load-more" class="text-blue-600 hover:text-blue-800 font-medium">
+                        <i class="fas fa-chevron-down mr-2"></i> Load More Messages
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-3">CB</div>
+                        <div class="font-bold text-white text-xl">ClimbingBlock</div>
+                    </div>
+                    <p class="mb-4">
+                        The ultimate climbing challenge game. Jump, stack, and climb your way to the top!
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-lg">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#game" class="hover:text-white">Play Game</a></li>
+                        <li><a href="#features" class="hover:text-white">Features</a></li>
+                        <li><a href="#download" class="hover:text-white">Download</a></li>
+                        <li><a href="#forum" class="hover:text-white">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-lg">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Game Guide</a></li>
+                        <li><a href="#" class="hover:text-white">Character List</a></li>
+                        <li><a href="#" class="hover:text-white">Tips & Tricks</a></li>
+                        <li><a href="#" class="hover:text-white">Leaderboard</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-lg">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Ad Choices</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p>© 2023 ClimbingBlock.com. All rights reserved. Climbing Block is a trademark of PinpinTeam.</p>
+                <p class="mt-2 text-sm">This site is not affiliated with CrazyGames. All game content is property of their respective owners.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <script>
+        // Forum functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const forumMessages = document.getElementById('forum-messages');
+            const forumForm = document.getElementById('forum-form');
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const loadMoreBtn = document.getElementById('load-more');
+            
+            // Bad words filter (simplified version)
+            const badWords = ['idiot', 'stupid', 'hate', 'dumb', 'loser'];
+            
+            // Sample messages (in a real app, this would come from a database)
+            const allMessages = [
+                {
+                    name: "ClimbingPro",
+                    message: "Just reached level 50! The llama character has the best jumping ability for high levels.",
+                    timestamp: "2 hours ago",
+                    replies: [
+                        {name: "JumpMaster", message: "Wow, that's impressive! Any tips for timing the jumps?", timestamp: "1 hour ago"},
+                        {name: "ClimbingPro", message: "Focus on the shadow below the block. When it overlaps completely, that's the perfect time to jump!", timestamp: "45 minutes ago"}
+                    ]
+                },
+                {
+                    name: "GamerGirl92",
+                    message: "The new jungle theme is amazing! Love the sound effects when you collect coins.",
+                    timestamp: "5 hours ago",
+                    replies: [
+                        {name: "SoundLover", message: "Totally agree! The developers did a great job with the audio design.", timestamp: "4 hours ago"}
+                    ]
+                },
+                {
+                    name: "Anonymous",
+                    message: "Can't seem to get past level 20. Any suggestions?",
+                    timestamp: "1 day ago",
+                    replies: [
+                        {name: "ProPlayerX", message: "Try saving your power-ups for after level 15. The magnet is especially useful for collecting coins from tricky positions.", timestamp: "22 hours ago"},
+                        {name: "ClimbMaster", message: "Practice the timing in the training mode. It really helps!", timestamp: "20 hours ago"}
+                    ]
+                },
+                {
+                    name: "LlamaLover",
+                    message: "Unlocked all 30 characters today! The panda is my favorite with its special double jump ability.",
+                    timestamp: "2 days ago",
+                    replies: []
+                },
+                {
+                    name: "TimingExpert",
+                    message: "The key to high scores is maintaining the combo multiplier. Try not to miss any blocks in a row!",
+                    timestamp: "3 days ago",
+                    replies: [
+                        {name: "NewPlayer", message: "Thanks for the tip! This helped me improve my score by 20%.", timestamp: "2 days ago"}
+                    ]
+                }
+            ];
+            
+            // Display first 3 messages
+            let visibleMessages = 3;
+            renderMessages();
+            
+            // Handle form submission
+            forumForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value || "Anonymous";
+                let message = document.getElementById('message').value;
+                
+                if (!message.trim()) return;
+                
+                // Filter bad words
+                badWords.forEach(word => {
+                    const regex = new RegExp(word, 'gi');
+                    message = message.replace(regex, '*'.repeat(word.length));
+                });
+                
+                // Add new message
+                allMessages.unshift({
+                    name: name,
+                    message: message,
+                    timestamp: "Just now",
+                    replies: []
+                });
+                
+                // Reset form
+                forumForm.reset();
+                
+                // Re-render messages
+                visibleMessages = 3;
+                renderMessages();
+                
+                // Scroll to the new message
+                window.scrollTo({
+                    top: forumMessages.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Load more messages
+            loadMoreBtn.addEventListener('click', function() {
+                visibleMessages += 5;
+                renderMessages();
+            });
+            
+            function renderMessages() {
+                forumMessages.innerHTML = '';
+                
+                const messagesToShow = allMessages.slice(0, visibleMessages);
+                
+                if (messagesToShow.length === 0) {
+                    forumMessages.innerHTML = '<p class="text-gray-500 text-center py-8">No messages yet. Be the first to post!</p>';
+                    return;
+                }
+                
+                messagesToShow.forEach((msg, index) => {
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'forum-message bg-white p-6 rounded-xl shadow-sm';
+                    
+                    let repliesHTML = '';
+                    msg.replies.forEach(reply => {
+                        repliesHTML += `
+                            <div class="ml-8 mt-6 pl-6 border-l-2 border-gray-200">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="font-semibold">${reply.name}</span>
+                                        <span class="text-gray-500 text-sm ml-2">${reply.timestamp}</span>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-gray-700">${reply.message}</p>
+                            </div>
+                        `;
+                    });
+                    
+                    messageElement.innerHTML = `
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="font-semibold">${msg.name}</span>
+                                        <span class="text-gray-500 text-sm ml-2">${msg.timestamp}</span>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-gray-800">${msg.message}</p>
+                                
+                                <div class="mt-4 flex">
+                                    <button class="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center reply-btn">
+                                        <i class="fas fa-reply mr-1"></i> Reply
+                                    </button>
+                                </div>
+                                
+                                ${repliesHTML}
+                                
+                                <div class="reply-form mt-4 hidden">
+                                    <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-2" placeholder="Write your reply..."></textarea>
+                                    <div class="flex justify-end">
+                                        <button class="cancel-reply text-gray-600 hover:text-gray-800 mr-3 text-sm">Cancel</button>
+                                        <button class="post-reply bg-blue-600 text-white px-4 py-1 rounded-lg text-sm">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    forumMessages.appendChild(messageElement);
+                });
+                
+                // Show/hide load more button
+                if (allMessages.length > visibleMessages) {
+                    loadMoreContainer.classList.remove('hidden');
+                } else {
+                    loadMoreContainer.classList.add('hidden');
+                }
+                
+                // Add event listeners to reply buttons
+                document.querySelectorAll('.reply-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const replyForm = this.closest('.forum-message').querySelector('.reply-form');
+                        replyForm.classList.toggle('hidden');
+                    });
+                });
+                
+                // Add event listeners to cancel buttons
+                document.querySelectorAll('.cancel-reply').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        this.closest('.reply-form').classList.add('hidden');
+                    });
+                });
+                
+                // Add event listeners to post buttons
+                document.querySelectorAll('.post-reply').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const replyTextarea = this.closest('.reply-form').querySelector('textarea');
+                        const replyText = replyTextarea.value.trim();
+                        
+                        if (!replyText) return;
+                        
+                        // Filter bad words
+                        let filteredReply = replyText;
+                        badWords.forEach(word => {
+                            const regex = new RegExp(word, 'gi');
+                            filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                        });
+                        
+                        // Add reply to data
+                        const messageIndex = Array.from(forumMessages.children).indexOf(
+                            this.closest('.forum-message')
+                        );
+                        
+                        allMessages[messageIndex].replies.push({
+                            name: "Anonymous",
+                            message: filteredReply,
+                            timestamp: "Just now"
+                        });
+                        
+                        // Hide form and clear textarea
+                        this.closest('.reply-form').classList.add('hidden');
+                        replyTextarea.value = '';
+                        
+                        // Re-render messages
+                        renderMessages();
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
